@@ -3,6 +3,7 @@ module github.com/go-packagist/framework
 go 1.20
 
 require (
+	github.com/go-packagist/encryption v1.0.0
 	github.com/go-packagist/hashing v1.1.1
 	github.com/stretchr/testify v1.8.2
 )

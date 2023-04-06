@@ -10,11 +10,9 @@ import (
 func TestHashing(t *testing.T) {
 	app := foundation.NewApplication()
 
-	app.Register(&hashing.Provider{
+	foundation.Facade().Register(&hashing.Provider{
 		Container: app.Container,
 	})
-
-	app.Boot()
 
 	assert.True(t,
 		hashing.Facade().Check("123456",

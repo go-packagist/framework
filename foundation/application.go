@@ -6,7 +6,7 @@ import (
 	"sync"
 )
 
-var instance *container.Container
+var instance *Application
 
 type Application struct {
 	*container.Container
@@ -26,20 +26,20 @@ func NewApplication() *Application {
 	return app
 }
 
-func SetInstance(container *container.Container) {
-	instance = container
+func SetInstance(app *Application) {
+	instance = app
 }
 
-func GetInstance() *container.Container {
+func GetInstance() *Application {
 	if instance == nil {
-		instance = NewApplication().Container
+		instance = NewApplication()
 	}
 
 	return instance
 }
 
 func (a *Application) bootstrapContainer() {
-	SetInstance(a.Container)
+	SetInstance(a)
 
 	a.Instance("app", a)
 }

@@ -6,7 +6,7 @@ import (
 )
 
 func Facade() *hashing.Manager {
-	if h, ok := foundation.GetInstance().MustMake("hashing").(*hashing.Manager); ok {
+	if h, ok := foundation.GetInstance().MustMake("hash").(*hashing.Manager); ok {
 		return h
 	}
 

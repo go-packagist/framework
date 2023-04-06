@@ -1,6 +1,8 @@
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/go-packagist/encryption v1.0.0 h1:nseFiqp9jQWaaAWrdqMp0ENNxSSEmk9JMPsmZNIOoCY=
+github.com/go-packagist/encryption v1.0.0/go.mod h1:pOsjNoUhhjrlJtkEg4SuVSyZm6CdATfDCT38f9KphQs=
 github.com/go-packagist/hashing v1.1.1 h1:nHz4yb8Ar+jbt2667VoC8YQe4ocWRtYQtLFxCXUNAXQ=
 github.com/go-packagist/hashing v1.1.1/go.mod h1:y1C1Y0+8DtbFEfSZlMc08qJfHT71aVQtTafi6Oxy8V0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
