@@ -14,7 +14,7 @@ type Provider struct {
 var _ provider.Provider = (*Provider)(nil)
 
 func (h *Provider) Register() {
-	h.Singleton("hash", func(c *container.Container) interface{} {
+	h.Singleton("hashing", func(c *container.Container) interface{} {
 		return hashing.NewManager(&hashing.Config{
 			Driver: "bcrypt",
 		})

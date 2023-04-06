@@ -1,13 +1,12 @@
 package foundation
 
 import (
-	"fmt"
 	"github.com/go-packagist/framework/container"
 	"github.com/go-packagist/framework/provider"
 	"sync"
 )
 
-var app *Application
+var instance *container.Container
 
 type Application struct {
 	*container.Container
@@ -27,14 +26,22 @@ func NewApplication() *Application {
 	return app
 }
 
-func SetInstance(a *Application) {
-	app = a
+func SetInstance(container *container.Container) {
+	instance = container
+}
+
+func GetInstance() *container.Container {
+	if instance == nil {
+		instance = NewApplication().Container
+	}
+
+	return instance
 }
 
 func (a *Application) bootstrapContainer() {
-	SetInstance(app)
+	SetInstance(a.Container)
 
-	a.Instance("app", app)
+	a.Instance("app", a)
 }
 
 func (a *Application) Register(provider provider.Provider) {
@@ -54,8 +61,6 @@ func (a *Application) Boot() {
 	if a.booted {
 		return
 	}
-
-	fmt.Println(a.providers)
 
 	for _, p := range a.providers {
 		if p != nil {
