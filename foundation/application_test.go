@@ -24,4 +24,9 @@ func TestApplication_Bootstrap(t *testing.T) {
 	})
 
 	app.Boot()
+	app.Boot()
+
+	app.Register(&provider.NullProvider{
+		Container: app.Container,
+	}) // booted and registered
 }
