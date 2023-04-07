@@ -22,6 +22,7 @@ func NewApplication() *Application {
 	}
 
 	app.bootstrapContainer()
+	app.registerBaseProviders()
 
 	return app
 }
@@ -44,6 +45,10 @@ func (a *Application) bootstrapContainer() {
 	a.Instance("app", a)
 }
 
+func (a *Application) registerBaseProviders() {
+	// todo: register base providers
+}
+
 func (a *Application) Register(provider provider.Provider) {
 	a.rw.Lock()
 	defer a.rw.Unlock()
@@ -54,6 +59,12 @@ func (a *Application) Register(provider provider.Provider) {
 
 	if a.booted {
 		provider.Boot()
+	}
+}
+
+func (a *Application) Registers(providers []provider.Provider) {
+	for _, p := range providers {
+		a.Register(p)
 	}
 }
 
